@@ -20,6 +20,7 @@ public class WebsiteActivity extends AppCompatActivity {
         wvWeb.setWebViewClient(new WebViewClient());
         Intent intentReceived = getIntent();
         String url = intentReceived.getStringExtra("url");
+        wvWeb.getSettings().setJavaScriptEnabled(true);
         wvWeb.getSettings().setBuiltInZoomControls(true);
         wvWeb.getSettings().setDisplayZoomControls(false);
         wvWeb.loadUrl(url);
