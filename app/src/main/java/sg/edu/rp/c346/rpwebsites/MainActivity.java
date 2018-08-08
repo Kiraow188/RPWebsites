@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         btnGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(),WebsiteActivity.class);
+                //Original
+                /*Intent intent = new Intent(getBaseContext(),WebsiteActivity.class);
                 String url="";
                 if (spin1.getSelectedItemPosition() == 0){
                     if (spin2.getSelectedItemPosition()==0){
@@ -81,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
                         url = "https://www.rp.edu.sg/soi/full-time-diplomas/details/r12";
                     }
                 }
+                intent.putExtra("url", url);
+                startActivity(intent); */
+                //Additional challenge
+                Intent intent = new Intent(getBaseContext(),WebsiteActivity.class);
+                String[][] sites = {{"https://www.rp.edu.sg/", "https://www.rp.edu.sg/student-life"}, {"https://www.rp.edu.sg/soi/full-time-diplomas/details/r47","https://www.rp.edu.sg/soi/full-time-diplomas/details/r12"}};
+                String url = sites[spin1.getSelectedItemPosition()][spin2.getSelectedItemPosition()];
                 intent.putExtra("url", url);
                 startActivity(intent);
             }
